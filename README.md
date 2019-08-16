@@ -5,8 +5,6 @@ engine](https://tectonic-typesetting.github.io/en-US/index.html) with a primed c
 docker pull rekka/tectonic
 ```
 
-Only **54MB** compressed.
-
 A fully working latex engine. Packages that are not in the cache will be
 downloaded on demand.
 
@@ -45,3 +43,13 @@ script:
 After building tectonic, it is run on the tex files in this repo to
 download all the common files from the tectonic bundle.
 
+`prime-cache.tex` is generated from local tectonic's manifest using
+
+```
+./create-prime-cache.sh manifest-file.txt
+```
+
+The manifest file is a file with a long hex string name located in
+
+- Mac: `$HOME/Library/Caches/Tectonic/manifests/`
+- *nix: `$HOME/.cache/Tectonic/manifests/`
